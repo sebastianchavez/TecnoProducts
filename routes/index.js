@@ -10,6 +10,7 @@ const saleCtrl = require('../controllers/sale')
 const saleDetailCtrl = require('../controllers/sale-detail')
 const ClientCtrl = require('../controllers/client')
 const PayCtrl = require('../controllers/pay')
+const LogErrorCtrl = require('../controllers/log-error')
 const auth = require('../middlewares/auth')
 const api = express.Router()
 
@@ -84,6 +85,9 @@ api.get('/pay/:cod',auth, PayCtrl.getByCodRut)
 api.post('/pay',auth,PayCtrl.savePay)
 api.put('/pay/:id',auth,PayCtrl.updatePay)
 api.delete('/pay/:id',auth,PayCtrl.deletePay)
+
+//Log Error
+api.post('/log/error', LogErrorCtrl.saveLogError)
 
 //validate token
 api.get('/private',auth,(req, res)=>{

@@ -6,7 +6,7 @@ const service = require('../services/index')
 const signUp = (req, res) => {
     console.log('POST /api/signup')
     console.log(req.body)
-    User.findOne({rut: req.body.rut}, (err,usr)=>{
+    User.findOne({rutEmp: req.body.rutEmp,rut: req.body.rut}, (err,usr)=>{
         if (err) res.status(500).send({message: `Error : ${err}`})
         if(!usr){
             const newUser = new User()
