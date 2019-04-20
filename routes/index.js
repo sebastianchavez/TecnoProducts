@@ -89,6 +89,14 @@ api.delete('/pay/:id',auth,PayCtrl.deletePay)
 //Log Error
 api.post('/log/error', LogErrorCtrl.saveLogError)
 
+api.get('/public', (req, res)=>{
+    res.status(200).json({message: 'Hello World public'})
+})
+
+api.get('/private',auth, (req, res)=>{
+    res.status(200).json({message: 'Hello World private'})
+})
+
 //validate token
 api.get('/private',auth,(req, res)=>{
     res.status(200).send({message: `Tienes acceso`, cod: 1})
