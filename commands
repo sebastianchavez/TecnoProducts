@@ -1,2 +1,6 @@
 //Instalar express, nodemon, body-parser
 npm i express nodemon body-parser
+
+## Subir servidor de heroku
+heroku git:remote -a tecnoproduct-backend
+git push heroku master

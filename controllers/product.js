@@ -21,8 +21,9 @@ const getProductByRut = (req, res) => {
 }
 
 const getProductByCod = (req,res) =>{
-    let cod = req.params.cod.split(',')
-    Product.findOne({cod:cod[0],rutEmp:cod[1]},(err, product) =>{
+    let cod = req.params.cod
+    let rutEmp = req.params.rut
+    Product.findOne({cod,rutEmp},(err, product) =>{
         if(err) return res.status(500).send({message:`Error al realizar la petición, Error: ${err}`})
         if(!product) return res.status(404).send({message: `Producto no encontrado`})
         return res.status(200).json(product)
