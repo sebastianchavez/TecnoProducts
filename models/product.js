@@ -6,6 +6,7 @@ const Schema = mongoose.Schema
 const ProductSchema = Schema({
     rutEmp: Number,
     dvEmp: String,
+    sucursal:Number,
     cod:Number,
     name: String,
     picture: String,

@@ -87,7 +87,7 @@ api.put('/pay/:id',auth,PayCtrl.updatePay)
 api.delete('/pay/:id',auth,PayCtrl.deletePay)
 
 //Log Error
-api.post('/log/error', LogErrorCtrl.saveLogError)
+api.post('/log/error',auth, LogErrorCtrl.saveLogError)
 
 api.get('/public', (req, res)=>{
     res.status(200).json({message: 'Hello World public'})

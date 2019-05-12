@@ -6,7 +6,8 @@ const Schema = mongoose.Schema
 const SaleSchema = Schema({
     rutEmp: Number,
     dvEmp: String,
-    cod: Number,
+    sucursar:Number,
+    codsale: Number,
     type: String,
     date:Date,
     client: Number,

@@ -6,10 +6,10 @@ const Schema = mongoose.Schema
 const SaleDetailSchema = Schema({
     rutEmp: Number,
     dvEmp: String,
-    cod: Number,
+    codSale: Number,
     codProd: String,
     description: String,
-    quantity: Number,
+    amount: Number,
     value:Number
 })
 

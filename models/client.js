@@ -10,7 +10,8 @@ const ClientSchema = Schema({
     contact: Number,
     direction: String,
     commune: String,
-    region: String
+    region: String,
+    email:String
 })
 
 

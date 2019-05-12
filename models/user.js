@@ -8,6 +8,7 @@ const bcrypt = require('bcrypt-nodejs')
 const userSchema = new Schema({
     rutEmp: Number,
     dvEmp: String,
+    sucursal:Number,
     rut: Number,
     dv: String,
     email: {type: String, lowercase: true},
@@ -17,7 +18,8 @@ const userSchema = new Schema({
     signupDate: {type: Date, default: Date.now()},
     lastLogin: Date,
     role:String,
-    active: Boolean
+    active: Boolean,
+    conversations:[]
 })
 
 userSchema.methods.encryptPassword = (password) => {

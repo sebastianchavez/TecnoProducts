@@ -5,9 +5,12 @@ const Schema = mongoose.Schema
 
 const StockSchema = Schema({
     rutEmp: Number,
+    dvEmp:String,
+    sucursal:Number,
     codProd: Number,
     operation: String,
-    quantity:Number,
-    date: Date
+    amount:Number,
+    date: Date,
+    user:String
 })
 module.exports = mongoose.model('Stock', StockSchema)
