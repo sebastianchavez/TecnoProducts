@@ -17,8 +17,9 @@ const getSaleDetailById = (req, res) => {
 
 const getSaleDetailByCodRut = (req, res) => {
     try {
-        let cod = req.params.cod.split(',')
-        SaleDetail.find({ cod: cod[0], rutEmp: cod[1] }, (err, sale) => {
+        let cod = req.params.cod
+        let rutEmp = req.params.rut
+        SaleDetail.find({ cod, rutEmp }, (err, sale) => {
             if (err) return res.status(500).send({ message: `Error al realizar la petición, Error: ${err}` })
             if (!sale) return res.status(404).send({ message: `Venta no encontrada` })
             return res.status(200).json(sale)
